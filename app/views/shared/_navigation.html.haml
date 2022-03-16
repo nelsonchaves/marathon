@@ -1,0 +1,16 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-info.bg-gradient
+  .container
+    = link_to "Marathon", root_path, class: "navbar-brand"
+    %button.navbar-toggler{"aria-controls" => "navbarText", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarText", "data-bs-toggle" => "collapse", type: "button"}
+      %span.navbar-toggler-icon
+    #navbarText.collapse.navbar-collapse
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        -# = link_to "Users", users_path, class: "nav-item nav-link"
+      %ul.navbar-nav.mb-2.mb-lg-0
+        - if user_signed_in?
+          -# = image_tag avatar_url_for(current_user, size: 24), class: "rounded-circle mr-1 nav-item nav-link"
+          -# = link_to Current.user.username, user_path(current_user.id), class: "nav-item nav-link"
+          = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link"
+        - else
+          = link_to "Sign up", new_user_registration_path, class: "nav-item nav-link"
+          = link_to "Login", new_user_session_path, class: "nav-item nav-link"
