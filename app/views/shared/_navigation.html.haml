@@ -10,8 +10,5 @@
         - if user_signed_in?
           -# = image_tag avatar_url_for(current_user, size: 24), class: "rounded-circle mr-1 nav-item nav-link"
           -# = link_to Current.user.username, user_path(current_user.id), class: "nav-item nav-link"
-          = link_to "Edit Account", edit_user_registration_path, class: "btn btn-outline-light nav-item nav-link me-2"
+          = link_to "Edit", edit_user_registration_path, class: "btn btn-outline-light nav-item nav-link me-2"
           = button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light nav-item nav-link"
-        - else
-          = link_to "Sign up", new_user_registration_path, class: "nav-item nav-link"
-          = link_to "Login", new_user_session_path, class: "nav-item nav-link"
