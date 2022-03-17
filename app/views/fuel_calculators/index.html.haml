@@ -1,0 +1,31 @@
+%h2 Fuel Calculator
+
+%table
+  %thead
+    %tr
+      %th Weight
+      %th Distance
+      %th Elevation
+      %th Estimate time
+      %th Temperature
+      %th Estimate start
+      %th
+      %th
+      %th
+
+  %tbody
+    - @fuel_calculators.each do |fuel_calculator|
+      %tr
+        %td= fuel_calculator.weight
+        %td= fuel_calculator.distance
+        %td= fuel_calculator.elevation
+        %td= fuel_calculator.estimate_time
+        %td= fuel_calculator.temperature
+        %td= fuel_calculator.estimate_start
+        %td= link_to 'Show', fuel_calculator
+        %td= link_to 'Edit', edit_fuel_calculator_path(fuel_calculator)
+        %td= link_to 'Destroy', fuel_calculator, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Fuel calculator', new_fuel_calculator_path

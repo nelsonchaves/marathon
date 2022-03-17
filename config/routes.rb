@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :fuel_calculators
+  
   devise_for :users
 
   unauthenticated do
