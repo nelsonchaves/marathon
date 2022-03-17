@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Weight:
+  = @fuel_calculator.weight
+  %b Body Weight in Kilograms
+  = @fuel_calculator.convert_lb_to_kg
+%p
+  %b Distance:
+  = @fuel_calculator.distance
+  %b Distance in Kilometers:
+  = @fuel_calculator.convert_miles_km
+%p
+  %b Elevation:
+  = @fuel_calculator.elevation
+  %b Elevation Gain in Kilometers
+  Needs conversion method
+  /3280.84
+%p
+  %b Estimate time:
+  = @fuel_calculator.estimate_time
+  %b Average Pace/Mile:
+  time / @fuel_calculator.distance.to_i
+  Needs conversion method for time in actual numbers
+%p
+  %b Temperature:
+  = @fuel_calculator.temperature
+  Needs conversion method
+%p
+  %b Estimate start:
+  = @fuel_calculator.estimate_start
+  Needs conversion method
+
+= link_to 'Edit', edit_fuel_calculator_path(@fuel_calculator)
+\|
+= link_to 'Back', fuel_calculators_path

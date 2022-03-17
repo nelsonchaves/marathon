@@ -1,0 +1,28 @@
+= form_for @fuel_calculator do |f|
+  - if @fuel_calculator.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@fuel_calculator.errors.count, "error")} prohibited this fuel_calculator from being saved:"
+      %ul
+        - @fuel_calculator.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :distance
+    = f.text_field :distance
+  .field
+    = f.label :elevation
+    = f.text_field :elevation
+  .field
+    = f.label :estimate_time
+    = f.text_field :estimate_time
+  .field
+    = f.label :temperature
+    = f.text_field :temperature
+  .field
+    = f.label :estimate_start
+    = f.text_field :estimate_start
+  .actions
+    = f.submit 'Save'
