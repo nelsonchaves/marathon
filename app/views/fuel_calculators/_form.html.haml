@@ -1,28 +1,23 @@
 = form_for @fuel_calculator do |f|
-  - if @fuel_calculator.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@fuel_calculator.errors.count, "error")} prohibited this fuel_calculator from being saved:"
-      %ul
-        - @fuel_calculator.errors.full_messages.each do |message|
-          %li= message
+  = render "shared/error_messages", object: f.object
 
-  .field
+  .form-outline.mb-4
     = f.label :weight
-    = f.text_field :weight
-  .field
+    = f.text_field :weight, class: "form-control", autofocus: true
+  .form-outline.mb-4
     = f.label :distance
-    = f.text_field :distance
-  .field
+    = f.text_field :distance, class: "form-control", autofocus: true
+  .form-outline.mb-4
     = f.label :elevation
-    = f.text_field :elevation
-  .field
+    = f.text_field :elevation, class: "form-control", autofocus: true
+  .form-outline.mb-4
     = f.label :estimate_time
-    = f.text_field :estimate_time
-  .field
+    = f.text_field :estimate_time, class: "form-control", autofocus: true
+  .form-outline.mb-4
     = f.label :temperature
-    = f.text_field :temperature
-  .field
+    = f.text_field :temperature, class: "form-control", autofocus: true
+  .form-outline.mb-4
     = f.label :estimate_start
-    = f.text_field :estimate_start
-  .actions
-    = f.submit 'Save'
+    = f.text_field :estimate_start, class: "form-control", autofocus: true
+
+  = f.submit 'Save', class: "btn btn-lg w-100 btn-primary mb-3"
