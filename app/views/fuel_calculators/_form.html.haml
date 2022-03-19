@@ -15,9 +15,9 @@
     = f.text_field :estimate_time, class: "form-control", autofocus: true
   .form-outline.mb-4
     = f.label :temperature
-    = f.text_field :temperature, class: "form-control", autofocus: true
+    = f.select :temperature, TemperatureRange.map{ |p| p }, {}, {class: "form-control"}
   .form-outline.mb-4
     = f.label :estimate_start
-    = f.text_field :estimate_start, class: "form-control", autofocus: true
+    = f.select :estimate_start, TimeBeforeRunning.map{ |p| p }, {}, {class: "form-control"}
 
   = f.submit 'Save', class: "btn btn-lg w-100 btn-primary mb-3"

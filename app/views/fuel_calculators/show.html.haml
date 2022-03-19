@@ -14,22 +14,31 @@
   %b Elevation:
   = @fuel_calculator.elevation
   %b Elevation Gain in Kilometers
-  Needs conversion method
-  /3280.84
+  = @fuel_calculator.elevation_gain_km
 %p
   %b Estimate time:
   = @fuel_calculator.estimate_time
   %b Average Pace/Mile:
-  time / @fuel_calculator.distance.to_i
-  Needs conversion method for time in actual numbers
+  = @fuel_calculator.average_pace_mile
 %p
   %b Temperature:
-  = @fuel_calculator.temperature
-  Needs conversion method
+  = @fuel_calculator.temperature.text
 %p
   %b Estimate start:
-  = @fuel_calculator.estimate_start
-  Needs conversion method
+  = @fuel_calculator.estimate_start.text
+
+
+%p
+  %h4 Pre-run Fuel Target
+  %b Carbohydrates:
+  = @fuel_calculator.carbohydrates
+%p
+  %h4 Expected Workout Totals
+  %b Caloric Burn Rate
+  = @fuel_calculator.caloric_burn_rate
+  %br
+  %b Running Power
+  = @fuel_calculator.running_power
 
 = link_to 'Edit', edit_fuel_calculator_path(@fuel_calculator)
 \|

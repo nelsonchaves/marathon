@@ -77,3 +77,4 @@ end
 
 gem 'devise'
 gem "haml-rails"
+gem 'classy_enum', '~> 4.0'
