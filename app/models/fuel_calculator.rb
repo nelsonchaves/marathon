@@ -20,7 +20,7 @@ class FuelCalculator < ApplicationRecord
   end
 
   def average_pace_mile
-    ((convert_miles_km / estimate_time.to_f) * 60).round(2)
+    (estimate_time.to_f / distance.to_f).round(2)
   end
 
   def carbohydrates
@@ -28,11 +28,11 @@ class FuelCalculator < ApplicationRecord
   end
 
   def caloric_burn_rate
-    (((elevation_gain_km * average_pace_mile)+ convert_miles_km) * convert_lb_to_kg).round(2)
+    (((elevation_gain_km * average_pace_mile) + convert_miles_km) * convert_lb_to_kg).round(2)
   end
 
   def formula_reference
-    estimate_time.to_f * 24
+    estimate_time.to_f / 60
   end
 
   def running_power
