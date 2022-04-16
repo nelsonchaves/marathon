@@ -26,11 +26,14 @@
 %p
   %b Estimate start:
   = @fuel_calculator.estimate_start.text
+  %hr
 
 %p
   %h4 Pre-run Fuel Target
   %b Carbohydrates:
   = @fuel_calculator.carbohydrates
+  %hr
+
 %p
   %h4 Expected Workout Totals
   %b Caloric Burn Rate
@@ -38,6 +41,20 @@
   %br
   %b Running Power
   = @fuel_calculator.running_power
+  %hr
+
+%p
+  %h4 Long run/race fueling target
+  %b These amounts should be consumed hourly while running
+  %p
+  %b Carbohydrates:
+  = @fuel_calculator.while_running_carbohydrates
+  %br
+  %b Sodium:
+  = @fuel_calculator.while_running_sodium
+  %br
+  %b Water:
+  = @fuel_calculator.temperature.fluid
 
 = link_to 'Edit', edit_fuel_calculator_path(@fuel_calculator)
 \|

@@ -36,6 +36,14 @@ class FuelCalculator < ApplicationRecord
   end
 
   def running_power
-    (((elevation_gain_km * 10 ) + convert_miles_km) * 1000) / (formula_reference * 3600) * 1.04 * convert_lb_to_kg
+    ((((elevation_gain_km * 10 ) + convert_miles_km) * 1000) / (formula_reference * 3600) * 1.04 * convert_lb_to_kg).round(2)
+  end
+
+  def while_running_carbohydrates
+    ((((((elevation_gain_km * 10) + convert_miles_km) * convert_lb_to_kg) / formula_reference) / 4) * 0.32).round(2)
+  end
+
+  def while_running_sodium
+    ((temperature.fluid / 33.814) * 700).round(2)
   end
 end

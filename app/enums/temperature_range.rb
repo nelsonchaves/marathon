@@ -5,10 +5,15 @@ class TemperatureRange::Fahrenheit40 < TemperatureRange
     "<50°F"
   end
 
-  def sweat_multiplier
+  def temperature_multiplier
     0.75
   end
+
+  def fluid
+    17 * temperature_multiplier
+  end
 end
+
 class TemperatureRange::Fahrenheit50 < TemperatureRange
   def text
     "50-59°F"
@@ -17,7 +22,11 @@ class TemperatureRange::Fahrenheit50 < TemperatureRange
   def temperature_multiplier
     0.85
   end
+  def fluid
+    17 * temperature_multiplier
+  end
 end
+
 class TemperatureRange::Fahrenheit60 < TemperatureRange
   def text
     "60-69°F"
@@ -25,6 +34,10 @@ class TemperatureRange::Fahrenheit60 < TemperatureRange
 
   def temperature_multiplier
     1
+  end
+
+  def fluid
+    17 * temperature_multiplier
   end
 end
 class TemperatureRange::Fahrenheit70 < TemperatureRange
@@ -35,6 +48,10 @@ class TemperatureRange::Fahrenheit70 < TemperatureRange
   def temperature_multiplier
     1.35
   end
+
+  def fluid
+    17 * temperature_multiplier
+  end
 end
 class TemperatureRange::Fahrenheit80 < TemperatureRange
   def text
@@ -43,6 +60,10 @@ class TemperatureRange::Fahrenheit80 < TemperatureRange
 
   def temperature_multiplier
     1.7
+  end
+
+  def fluid
+    17 * temperature_multiplier
   end
 end
 class TemperatureRange::Fahrenheit90 < TemperatureRange
@@ -53,6 +74,10 @@ class TemperatureRange::Fahrenheit90 < TemperatureRange
   def temperature_multiplier
     2
   end
+
+  def fluid
+    17 * temperature_multiplier
+  end
 end
 class TemperatureRange::Fahrenheit100 < TemperatureRange
   def text
@@ -61,5 +86,9 @@ class TemperatureRange::Fahrenheit100 < TemperatureRange
 
   def temperature_multiplier
     2.35
+  end
+
+  def fluid
+    17 * temperature_multiplier
   end
 end
