@@ -1,0 +1,2 @@
+class FuelOption < ApplicationRecord
+end

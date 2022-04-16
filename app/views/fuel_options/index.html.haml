@@ -1,0 +1,49 @@
+%h2 Fuel Option
+
+
+%br
+%table.table.caption-top
+  %caption
+    Fueling Targets - Calculated from the data you entered in the Fuel Calculator
+  %thead
+    %tr
+      %th{:scope => "col"}
+        \#
+      %th{:scope => "col"}
+        Pre-run fuel target
+      %th{:scope => "col"}
+        Long run/race fueling target
+        %br
+        (needed each hour)
+      %th{:scope => "col"}
+        Long run/race fueling target
+        %br
+        (needed each hour)
+    %tr
+      %th{:scope => "col"}
+
+      %th{:scope => "col"}
+        Carbohydrates
+      %th{:scope => "col"}
+        Carbohydrates
+      %th{:scope => "col"}
+        Sodium
+  %tbody
+    %tr
+      %th{:scope => "row"} 1
+      %td= @fuel_calculator.caloric_burn_rate
+      %td= @fuel_calculator.while_running_carbohydrates
+      %td= @fuel_calculator.while_running_sodium
+
+
+
+  %tbody
+    - @fuel_options.each do |fuel_option|
+      %tr
+        %td= link_to 'Show', fuel_option
+        %td= link_to 'Edit', edit_fuel_option_path(fuel_option)
+        %td= link_to 'Destroy', fuel_option, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Fuel option', new_fuel_option_path
